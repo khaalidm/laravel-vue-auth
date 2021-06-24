@@ -6,18 +6,19 @@
             </h1>
         </header>
         <div id="content">
-            Hello Hello
+            <router-view></router-view>
         </div>
     </div>
-</template><script>
-  export default {
+</template>
+<script>
+export default {
     data() {
-      return {
-        //
-      }
+        return {
+            //
+        };
     },
     components: {
         //
     }
-  }
+};
 </script>
