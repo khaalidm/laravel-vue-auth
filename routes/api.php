@@ -22,9 +22,9 @@ Route::prefix('auth')->group(function () {
     Route::post('register', 'App\Http\Controllers\AuthController@register');
     Route::post('login', 'App\Http\Controllers\AuthController@login');
     Route::get('refresh', 'App\Http\Controllers\AuthController@refresh');
-   
-    Route::group(['middleware' => 'auth:api'], function () {
-        Route::get('user', 'App\Http\Controllers\AuthController@user');
-        Route::post('logout', 'App\Http\Controllers\AuthController@logout');
+
+    Route::group(['middleware' => 'auth:api'], function(){
+        Route::get('users', 'UserController@index')->middleware('isAdmin');
+        Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
     });
 });
