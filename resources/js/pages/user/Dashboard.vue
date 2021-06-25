@@ -3,7 +3,8 @@
         <div class="card card-default">
             <div class="card-header">Dashboard</div>
             <div class="card-body">
-                Hey I'm a User
+                Hey I'm a User:
+                <strong> {{ $auth.user().email }}</strong>
             </div>
         </div>
     </div>
