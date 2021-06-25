@@ -1,16 +1,14 @@
 <template>
     <div class="container">
         <div class="card card-default">
-            <div class="card-header">Inscription</div>
+            <div class="card-header">User Registration</div>
             <div class="card-body">
                 <div class="alert alert-danger" v-if="has_error && !success">
                     <p v-if="error == 'registration_validation_error'">
-                        Erreur(s) de validation, veuillez consulter le(s)
-                        message(s) ci-dessous.
+                        Validation error, please check message below
                     </p>
                     <p v-else>
-                        Erreur, impossible de s'inscrire pour le moment. Si le
-                        problème persiste, veuillez contacter un administrateur.
+                        Error, Unable to fufill request
                     </p>
                 </div>
                 <form
@@ -25,7 +23,7 @@
                             'has-error': has_error && errors.email
                         }"
                     >
-                        <label for="email">E-mail</label>
+                        <label for="email">Email</label>
                         <input
                             type="email"
                             id="email"
@@ -45,7 +43,7 @@
                             'has-error': has_error && errors.password
                         }"
                     >
-                        <label for="password">Mot de passe</label>
+                        <label for="password">Password</label>
                         <input
                             type="password"
                             id="password"
@@ -65,7 +63,7 @@
                         }"
                     >
                         <label for="password_confirmation"
-                            >Confirmation mot de passe</label
+                            >Password Confirmation</label
                         >
                         <input
                             type="password"
@@ -74,8 +72,8 @@
                             v-model="password_confirmation"
                         />
                     </div>
-                    <button type="submit" class="btn btn-default">
-                        Inscription
+                    <button type="submit" class="btn btn-primary">
+                        Register
                     </button>
                 </form>
             </div>

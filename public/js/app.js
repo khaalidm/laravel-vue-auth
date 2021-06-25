@@ -3288,8 +3288,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -41018,7 +41016,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "card card-default" }, [
-      _c("div", { staticClass: "card-header" }, [_vm._v("Inscription")]),
+      _c("div", { staticClass: "card-header" }, [_vm._v("User Registration")]),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
         _vm.has_error && !_vm.success
@@ -41026,12 +41024,12 @@ var render = function() {
               _vm.error == "registration_validation_error"
                 ? _c("p", [
                     _vm._v(
-                      "\n                    Erreur(s) de validation, veuillez consulter le(s)\n                    message(s) ci-dessous.\n                "
+                      "\n                    Validation error, please check message below\n                "
                     )
                   ])
                 : _c("p", [
                     _vm._v(
-                      "\n                    Erreur, impossible de s'inscrire pour le moment. Si le\n                    problème persiste, veuillez contacter un administrateur.\n                "
+                      "\n                    Error, Unable to fufill request\n                "
                     )
                   ])
             ])
@@ -41059,9 +41057,7 @@ var render = function() {
                     }
                   },
                   [
-                    _c("label", { attrs: { for: "email" } }, [
-                      _vm._v("E-mail")
-                    ]),
+                    _c("label", { attrs: { for: "email" } }, [_vm._v("Email")]),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
@@ -41107,7 +41103,7 @@ var render = function() {
                   },
                   [
                     _c("label", { attrs: { for: "password" } }, [
-                      _vm._v("Mot de passe")
+                      _vm._v("Password")
                     ]),
                     _vm._v(" "),
                     _c("input", {
@@ -41150,7 +41146,7 @@ var render = function() {
                   },
                   [
                     _c("label", { attrs: { for: "password_confirmation" } }, [
-                      _vm._v("Confirmation mot de passe")
+                      _vm._v("Password Confirmation")
                     ]),
                     _vm._v(" "),
                     _c("input", {
@@ -41179,12 +41175,8 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "button",
-                  { staticClass: "btn btn-default", attrs: { type: "submit" } },
-                  [
-                    _vm._v(
-                      "\n                    Inscription\n                "
-                    )
-                  ]
+                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+                  [_vm._v("\n                    Register\n                ")]
                 )
               ]
             )
