@@ -16,8 +16,6 @@ window.Vue = Vue
 Vue.router = router
 Vue.use(VueRouter)
 
-console.log(VueAuth)
-
 // Set Vue authentication
 Vue.use(VueAxios, axios)
 axios.defaults.baseURL = `${process.env.MIX_APP_URL}:8000/api`

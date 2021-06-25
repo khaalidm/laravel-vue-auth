@@ -5,8 +5,7 @@
             <div class="card-body">
                 <div class="alert alert-danger" v-if="has_error">
                     <p>
-                        Erreur, impossible de se connecter avec ces
-                        identifiants.
+                        Error, please check your details and try again
                     </p>
                 </div>
                 <form autocomplete="off" @submit.prevent="login" method="post">
@@ -41,39 +40,44 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      email: null,
-      password: null,
-      has_error: false
+    data() {
+        return {
+            email: null,
+            password: null,
+            has_error: false
+        };
+    },
+    mounted() {
+        //
+    },
+    methods: {
+        login() {
+            // get the redirect object
+            var redirect = this.$auth.redirect();
+            var app = this;
+
+            this.$auth.login({
+                params: {
+                    email: app.email,
+                    password: app.password
+                },
+                success: function() {
+                    // handle redirection
+                    const redirectTo = redirect
+                        ? redirect.from.name
+                        : this.$auth.user().role === 2
+                        ? "admin.dashboard"
+                        : "dashboard";
+
+                    this.$router.push({ name: redirectTo });
+                },
+                error: function() {
+                    app.has_error = true;
+                },
+                rememberMe: true,
+                fetchUser: true
+            });
+        }
     }
-  },    mounted() {
-    //
-  },    methods: {
-    login() {
-      // get the redirect object
-      var redirect = this.$auth.redirect()
-      var app = this
-      console.log(app.email + " " + app.password)
-      this.$auth.login({
-        params: {
-          email: app.email,
-          password: app.password
-        },
-        success: function() {
-          // handle redirection
-          const redirectTo = redirect ? redirect.from.name :
-          this.$auth.user().role === 2 ? 'admin.dashboard' : 'dashboard'            
-          
-          this.$router.push({name: redirectTo})
-        },
-        error: function() {
-          app.has_error = true
-        },
-        rememberMe: true,
-        fetchUser: true
-      })
-    }
-  }
-}
+};
 </script>

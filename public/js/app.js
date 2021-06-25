@@ -3090,7 +3090,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3106,7 +3105,6 @@ __webpack_require__.r(__webpack_exports__);
       // get the redirect object
       var redirect = this.$auth.redirect();
       var app = this;
-      console.log(app.email + " " + app.password);
       this.$auth.login({
         params: {
           email: app.email,
@@ -3114,7 +3112,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         success: function success() {
           // handle redirection
-          var redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'admin.dashboard' : 'dashboard';
+          var redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? "admin.dashboard" : "dashboard";
           this.$router.push({
             name: redirectTo
           });
@@ -3289,6 +3287,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {//
   }
@@ -3365,8 +3365,7 @@ __webpack_require__.r(__webpack_exports__);
 window.Vue = vue__WEBPACK_IMPORTED_MODULE_8__.default; // Set Vue router
 
 vue__WEBPACK_IMPORTED_MODULE_8__.default.router = _router__WEBPACK_IMPORTED_MODULE_7__.default;
-vue__WEBPACK_IMPORTED_MODULE_8__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_9__.default);
-console.log((_websanova_vue_auth__WEBPACK_IMPORTED_MODULE_3___default())); // Set Vue authentication
+vue__WEBPACK_IMPORTED_MODULE_8__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_9__.default); // Set Vue authentication
 
 vue__WEBPACK_IMPORTED_MODULE_8__.default.use((vue_axios__WEBPACK_IMPORTED_MODULE_4___default()), (axios__WEBPACK_IMPORTED_MODULE_1___default()));
 (axios__WEBPACK_IMPORTED_MODULE_1___default().defaults.baseURL) = "".concat("http://127.0.0.1", ":8000/api");
@@ -40678,7 +40677,7 @@ var render = function() {
           ? _c("div", { staticClass: "alert alert-danger" }, [
               _c("p", [
                 _vm._v(
-                  "\n                    Erreur, impossible de se connecter avec ces\n                    identifiants.\n                "
+                  "\n                    Error, please check your details and try again\n                "
                 )
               ])
             ])
