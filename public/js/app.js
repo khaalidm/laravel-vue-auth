@@ -3085,6 +3085,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -40807,6 +40814,21 @@ var render = function() {
                 }
               },
               [_vm._v("\n            Login\n        ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-link",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.$router.push("register")
+                  }
+                }
+              },
+              [_vm._v("\n            register\n        ")]
             )
           ])
     ]

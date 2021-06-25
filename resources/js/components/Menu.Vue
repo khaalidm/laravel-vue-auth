@@ -17,6 +17,13 @@
             >
                 Login
             </button>
+            <button
+                class="btn btn-link"
+                href="#"
+                @click.prevent="$router.push('register')"
+            >
+                register
+            </button>
         </div>
     </nav>
 </template>
