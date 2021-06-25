@@ -13,7 +13,7 @@
 
 - overwrite: `APP_URL=http://127.0.0.1`
 - add: `MIX_APP_URL="${APP_URL}"`
-
+- configure database varibles as per requirement
 
 ## Setting up Authentication
 
